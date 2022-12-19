@@ -65,7 +65,6 @@ public class Main : MonoBehaviour
                 for (int j = 1; j < nY - 1; j++)
                 {
                     Unew[i, j] = -(((Uold[i, j] - n0) * tau) / tn) + ((D * tau) / (h * h)) * (Uold[i - 1, j] + Uold[i + 1, j] + Uold[i, j - 1] + Uold[i, j + 1] - 4 * Uold[i, j]) + Uold[i, j];
-
                 }
             }
 
