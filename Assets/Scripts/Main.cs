@@ -5,19 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Main : MonoBehaviour
 {
-
     [SerializeField] GameObject electron;
     [SerializeField] Transform folder;
     [SerializeField] InputField input_n0, input_tn, input_D, input_L, input_h, input_tau, input_eps, input_ngr2, input_ngr3;
     [SerializeField] int n0 = 1000, ngr2 = 1100, ngr3 = 1050;
     [SerializeField] double tn = 0.0001, D = 0.01, L = 0.002, h = 0.0001, tau = 0.0000001, eps = 0.0001;
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-
-    }
 
     public void Draw()
     {
@@ -117,20 +109,15 @@ public class Main : MonoBehaviour
             }
         }
 
-
-
         for (int i = 0; i < nX; i++)
         {
             for (int j = 0; j < nY; j++)
             {
                 GameObject elect = Instantiate(electron, new Vector3(i, j, 0), Quaternion.identity);
                 elect.transform.SetParent(folder);
-                elect.GetComponent<SpriteRenderer>().color = new Color((float)Math.Sqrt((Unity[i, j] / 8) / 255f), (float)Math.Acos((Unity[i, j] / 5) / 255f), (float)Math.Asin((Unity[i, j] / 5) / 255f), 5f);
+                elect.GetComponent<SpriteRenderer>().color = new Color((float)Math.Sqrt((Unity[i, j] / 7) / 255f), (float)Math.Acos((Unity[i, j] / 5) / 255f), (float)Math.Asin((Unity[i, j] / 5) / 255f), 5f);
                 elect.name = Convert.ToString(Unity[i, j]);
             }
         }
-
-
-
     }
 }
