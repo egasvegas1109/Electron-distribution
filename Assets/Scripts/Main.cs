@@ -114,7 +114,7 @@ public class Main : MonoBehaviour
             {
                 GameObject elect = Instantiate(electron, new Vector3(i, j, 0), Quaternion.identity);
                 elect.transform.SetParent(folder);
-                elect.GetComponent<SpriteRenderer>().color = new Color((float)Math.Sqrt((Unity[i, j] / 7) / 255f), (float)Math.Acos((Unity[i, j] / 5) / 255f), (float)Math.Asin((Unity[i, j] / 5) / 255f), 5f);
+                elect.GetComponent<SpriteRenderer>().color = new Color((float)Math.Cos((Unity[i, j] /15) / 255f), (float)Math.Cos((Unity[i, j] / 5) / 255f), (float)Math.Cos((Unity[i, j] / 5) / 255f), 5f);
                 elect.name = Convert.ToString(Unity[i, j]);
             }
         }
